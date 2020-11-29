@@ -1,0 +1,75 @@
+{
+  "name": "use-theme-switcher",
+  "version": "1.0.0",
+  "description": "React theme switcher with hooks and preventing the initial flash",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib --verbose --copy-files",
+    "clean": "rimraf lib",
+    "prebuild": "npm run clean",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "pretest": "npm run build",
+    "test:lint": "eslint --ignore-path .gitignore --ext js,jsx,snap .",
+    "test": "npm run test:lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infoxicator/use-theme-switcher.git"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "theme",
+    "dark-mode"
+  ],
+  "author": {
+    "name": "Ruben Casas",
+    "email": "ruben@infoxication.net"
+  },
+  "contributors": [
+    "Samuel Larsen-Disney <s.larsendisney@gmail.com> (https://github.com/slarsendisney)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infoxicator/use-theme-switcher/issues"
+  },
+  "homepage": "https://github.com/infoxicator/use-theme-switcher#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "terser": "^4.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.12.8",
+    "@babel/core": "7.12.9",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-amex": "^3.5.0",
+    "cross-env": "7.0.2",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "4.3.0",
+    "jest": "^26.6.3",
+    "prettier": "2.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "rimraf": "^2.7.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
